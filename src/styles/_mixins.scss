@@ -1,0 +1,16 @@
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin neon-glow($color) {
+  background: radial-gradient(circle, rgba($color, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(60px);
+}

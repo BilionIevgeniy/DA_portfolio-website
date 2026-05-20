@@ -1,0 +1,27 @@
+@use 'variables' as v; // Мы подключили переменные как "v"
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: v.$color-bg;
+  color: v.$color-text-main;
+  font-family: v.$font-main;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
