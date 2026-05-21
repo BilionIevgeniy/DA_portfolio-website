@@ -1,9 +1,26 @@
 @use 'styles/fonts';
 @use 'styles/reset';
+@use 'styles/variables' as v;
 
+body {
+  background-color: v.$color-bg;
+  background-image:
+    radial-gradient(circle at 10% 25%, rgba(v.$color-bg, 0.35) 0%, rgba(78, 57, 202, 0) 65%),
+    radial-gradient(circle at 45% 35%, rgba(45, 56, 104, 0.354) 0%, rgba(197, 45, 45, 0) 70%);
+  background-position: center;
+  background-size: cover;
+}
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.bg-blur {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  overflow: visible;
 }
