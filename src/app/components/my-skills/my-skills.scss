@@ -1,0 +1,129 @@
+@use '../../../styles/variables' as v;
+
+.skills-section {
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  box-sizing: border-box;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 одинаковые колонки как в Figma
+  gap: 48px; // Шаг-отступ между элементами
+  flex-grow: 1;
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      color: v.$color-text-main;
+    }
+
+    &.continuous-learning {
+      span {
+        color: v.$color-secondary;
+      }
+      img {
+        filter: none;
+      }
+    }
+  }
+}
+
+// ПРАВАЯ СТОРОНА: ТЕКСТ
+.skills-text-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+
+  .skills-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: v.$color-text-main;
+    margin: 0 0 32px 0;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 4px;
+      background-color: v.$color-secondary;
+    }
+  }
+
+  .skills-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: v.$color-text-main;
+    margin-bottom: 40px;
+  }
+
+  .skills-cta-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: v.$color-text-main;
+    margin: 0 0 12px 0;
+
+    .accent {
+      color: v.$color-secondary;
+    }
+  }
+
+  .skills-sub-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: v.$color-text-muted;
+    margin-bottom: 48px;
+  }
+
+  .skills-button {
+    background-color: v.$color-primary;
+    color: #000000;
+    border: none;
+    padding: 16px 36px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(v.$color-primary, 0.5);
+    }
+  }
+}
