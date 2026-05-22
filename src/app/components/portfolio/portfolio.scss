@@ -1,0 +1,172 @@
+@use '../../../styles/variables' as v;
+
+.portfolio-section {
+  width: 100%;
+  padding: 120px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 100px;
+
+  .portfolio-title {
+    position: relative;
+    font-size: 64px;
+    font-weight: 700;
+    color: v.$color-text-main;
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0 0 24px 0;
+
+    &::before,
+    &::after {
+      content: '';
+
+      height: 4px;
+      background-color: v.$color-secondary;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200vw;
+    }
+    &::before {
+      right: 105%;
+      width: 100px;
+    }
+    &::after {
+      width: 100vw;
+      left: 105%;
+    }
+  }
+
+  .portfolio-subtitle {
+    font-size: 18px;
+    color: v.$color-text-main;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  &.project-row-reversed {
+    flex-direction: row-reverse;
+
+    .project-info {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}
+
+.project-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  .laptop-wrapper {
+    max-width: 580px;
+    width: 100%;
+
+    .laptop-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  .project-name {
+    font-size: 48px;
+    font-weight: 700;
+    color: v.$color-secondary; // Фиолетовое имя
+    margin: 0 0 16px 0;
+  }
+
+  .project-tech {
+    font-size: 24px;
+    font-weight: 600;
+    color: v.$color-primary; // Зеленый стек технологий
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .project-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: v.$color-text-main;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+}
+
+.project-actions {
+  display: flex;
+  gap: 24px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .btn-primary {
+    background-color: v.$color-secondary;
+    color: v.$color-text-main;
+    border: none;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(v.$color-secondary, 0.4);
+    }
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: v.$color-text-main;
+    border: 2px solid v.$color-primary;
+
+    &:hover {
+      background-color: rgba(v.$color-primary, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(v.$color-primary, 0.2);
+    }
+  }
+}

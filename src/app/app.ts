@@ -4,7 +4,7 @@ import { Hero } from './components/hero/hero';
 import { AboutMe } from './components/about-me/about-me';
 import { MySkills } from './components/my-skills/my-skills';
 import { Portfolio } from './components/portfolio/portfolio';
-import { Reviews } from './components/reviews/reviews';
+import { TestimonialsComponent } from './components/testimonials/testimonials';
 import { ContactForm } from './components/contact-form/contact-form';
 import { Header } from './components/header/header';
 
@@ -16,9 +16,9 @@ import { Header } from './components/header/header';
     AboutMe,
     MySkills,
     Portfolio,
-    Reviews,
     ContactForm,
     Header,
+    TestimonialsComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

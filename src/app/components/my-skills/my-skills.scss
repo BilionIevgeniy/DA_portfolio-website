@@ -20,8 +20,8 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); // 4 одинаковые колонки как в Figma
-  gap: 48px; // Шаг-отступ между элементами
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
   flex-grow: 1;
 
   .skill-item {
@@ -56,7 +56,6 @@
   }
 }
 
-// ПРАВАЯ СТОРОНА: ТЕКСТ
 .skills-text-content {
   max-width: 500px;
   display: flex;

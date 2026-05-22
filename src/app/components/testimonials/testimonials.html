@@ -1,0 +1,46 @@
+<section id="testimonials" class="testimonials-section">
+  <div class="testimonials-container">
+
+    <div class="testimonial-card-wrapper">
+
+      <div class="quote-card">
+        <div class="quote-icon">“</div>
+
+        <p class="quote-text">{{ activeTestimonial().text }}</p>
+
+        <div class="quote-footer">
+          <div class="footer-line"></div>
+          <span class="author-info">
+            {{ activeTestimonial().author }} - {{ activeTestimonial().role }}
+          </span>
+        </div>
+      </div>
+
+      <div class="avatar-visual">
+        <div class="avatar-circle">
+          <img [src]="activeTestimonial().imgSrc" [alt]="activeTestimonial().author" class="avatar-img">
+        </div>
+        <div class="avatar-decor-line"></div>
+      </div>
+
+    </div>
+
+    <div class="slider-controls">
+      <button class="arrow-btn" (click)="prevSlide()">
+        <span class="arrow-icon">←</span>
+      </button>
+
+      <div class="pagination-dots">
+        @for (slide of testimonials; track $index) {
+        <button class="dot" [class.active]="$index === currentSlide()" (click)="goToSlide($index)">
+        </button>
+        }
+      </div>
+
+      <button class="arrow-btn" (click)="nextSlide()">
+        <span class="arrow-icon">→</span>
+      </button>
+    </div>
+
+  </div>
+</section>
