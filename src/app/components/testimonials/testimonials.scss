@@ -19,7 +19,6 @@
   box-sizing: border-box;
 }
 
-// ГЛАВНЫЙ БЛОК СЛАЙДЕРА
 .testimonial-card-wrapper {
   display: flex;
   align-items: center;
@@ -29,27 +28,28 @@
   margin-bottom: 48px;
 }
 
-// ЛЕВАЯ КАРТОЧКА С ТЕКСТОМ
 .quote-card {
   position: relative;
   flex: 1;
   max-width: 820px;
-  border: 2px solid v.$color-primary; // Зеленая рамка как в Figma
-  border-radius: 30px; // Плавные углы
+  min-height: 320px;
+  border: 2px solid v.$color-primary;
+  border-radius: 30px;
   padding: 64px 48px 48px 48px;
   background-color: transparent;
   box-sizing: border-box;
-
-  // Огромные кавычки, нависающие сверху слева
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .quote-icon {
     position: absolute;
-    top: -45px;
-    left: 40px;
+    top: -20px;
+    left: -20px;
     font-size: 140px;
     font-family: serif;
     line-height: 1;
-    color: v.$color-secondary; // Фиолетовый цвет кавычек
-    background-color: v.$color-bg; // Перекрывает рамку сзади
+    color: v.$color-secondary;
+    background-color: v.$color-bg;
     padding: 0 10px;
   }
 
@@ -57,7 +57,7 @@
     font-size: 22px;
     line-height: 1.6;
     color: v.$color-text-main;
-    margin: 0 0 40px 0;
+    margin: 0 0 32px 0;
     font-weight: 400;
   }
 
@@ -67,7 +67,6 @@
     gap: 20px;
     width: 100%;
 
-    // Фиолетовая линия перед автором
     .footer-line {
       width: 320px;
       height: 2px;
@@ -83,7 +82,6 @@
   }
 }
 
-// ПРАВАЯ ЧАСТЬ: АВАТАР И ДЕКОР
 .avatar-visual {
   position: relative;
   display: flex;
@@ -95,7 +93,7 @@
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    border: 3px solid v.$color-secondary; // Фиолетовый ободок аватара
+    border: 3px solid v.$color-secondary;
     overflow: hidden;
     z-index: 2;
     display: flex;
@@ -110,7 +108,6 @@
     }
   }
 
-  // Линия уходящая вправо от аватара
   .avatar-decor-line {
     position: absolute;
     left: 50%;
@@ -121,18 +118,17 @@
   }
 }
 
-// БЛОК УПРАВЛЕНИЯ (СТРЕЛКИ И ТОЧКИ)
 .slider-controls {
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-right: 180px; // Смещаем элементы управления чуть левее, чтобы они визуально центрировались под карточкой
+  margin-right: 180px;
 
   .arrow-btn {
     background: none;
     border: none;
     cursor: pointer;
-    color: v.$color-primary; // Зеленые неоновые стрелки
+    color: v.$color-primary;
     font-size: 32px;
     display: flex;
     align-items: center;
@@ -154,7 +150,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: v.$color-text-muted; // Неактивные точки сероватые
+      background-color: v.$color-text-muted;
       border: none;
       cursor: pointer;
       padding: 0;
@@ -162,9 +158,8 @@
         background-color 0.3s ease,
         transform 0.2s ease;
 
-      // Активная точка красится в сочный цвет
       &.active {
-        background-color: v.$color-primary; // Наш зеленый неон
+        background-color: v.$color-primary;
         transform: scale(1.1);
       }
 

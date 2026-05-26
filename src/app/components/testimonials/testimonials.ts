@@ -1,5 +1,7 @@
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import is from '@angular/common/locales/is';
+import { of } from 'rxjs';
 
 interface Testimonial {
   text: string;
@@ -20,34 +22,28 @@ export class TestimonialsComponent {
 
   testimonials: Testimonial[] = [
     {
-      text: "Ievgen really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
-      author: 'V. Schuster',
-      role: 'Team Partner',
-      imgSrc: 'images/review-avatar-1.png',
+      text: 'Ievgen demonstrated strong technical capabilities and a genuine dedication to high-quality software. He worked across both backend and frontend with confidence, delivering scalable solutions in Node.js and building clean, responsive interfaces with React. Highly dependable and professional.',
+      author: 'Noam Barnea',
+      role: 'VP R&D at Leal Health',
+      imgSrc: 'images/noam.jpeg',
     },
     {
-      text: 'Working with this developer was an absolute pleasure. His ability to build modular, clean Angular architectures drastically improved our production speed.',
-      author: 'M. Weber',
-      role: 'Project Manager',
-      imgSrc: 'images/review-avatar-2.png',
+      text: 'I was part of the team that trained Ievgen, and he came out as the top student from the bootcamp. We later hired him at OSSystem, where his passion and remarkable results were outstanding. He proved to be a fast learner, focused on building sustainable and scalable applications.',
+      author: 'Best Rotimi',
+      role: 'Senior Full-Stack Engineer',
+      imgSrc: 'images/best.jpeg',
     },
     {
-      text: "Great problem-solving skills and persistent mindset. He deeply analyzes every task and doesn't stop until finding the most elegant and optimized code solution.",
-      author: 'A. Schmidt',
+      text: "I was consistently impressed by Ievgen's professionalism. He is always open to helping others and fostering a collaborative atmosphere. His code is clean, well-structured, and adheres to best practices. He approaches every task with determination and always finds effective solutions.",
+      author: 'Hrach Avagyan',
       role: 'Senior Frontend Engineer',
-      imgSrc: 'images/review-avatar-3.png',
+      imgSrc: 'images/hrach.jpeg',
     },
     {
-      text: 'Exceptional UI/UX implementation. He converted our Figma designs into pixel-perfect responsive templates down to the exact spacing and neon glow effects.',
-      author: 'S. Fischer',
-      role: 'UI/UX Designer',
-      imgSrc: 'images/review-avatar-4.png',
-    },
-    {
-      text: 'Highly reliable developer with excellent technical competence in modern TypeScript and SCSS. A great asset to any agile Scrum development team.',
-      author: 'T. Wagner',
-      role: 'Scrum Master',
-      imgSrc: 'images/review-avatar-5.png',
+      text: 'Ievgen is an exceptional developer with impeccable attention to detail. He consistently demonstrates a solution-oriented approach to every challenge, focusing on high-quality results. His proactive communication and positive attitude make him a truly valuable asset to any team.',
+      author: 'Pavel Kalinichenko',
+      role: 'Senior Full-Stack Engineer | DevOps',
+      imgSrc: 'images/pavel.jpeg',
     },
   ];
 
