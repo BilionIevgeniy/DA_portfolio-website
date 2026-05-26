@@ -1,0 +1,319 @@
+@use '../../../styles/variables' as v;
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  background-color: v.$color-bg;
+  padding: 120px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+.contact-header {
+  width: 100%;
+  margin-bottom: 80px;
+
+  .contact-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: v.$color-text-main;
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+
+    &::before {
+      content: '';
+      width: 320px;
+      height: 4px;
+      background-color: v.$color-secondary;
+    }
+  }
+}
+
+.contact-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.contact-text-side {
+  flex: 1;
+  max-width: 450px;
+
+  .contact-subtitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: v.$color-text-main;
+    margin: 0 0 24px 0;
+  }
+
+  .contact-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: v.$color-text-main;
+    margin-bottom: 32px;
+  }
+
+  .contact-cta-text {
+    font-size: 18px;
+    color: v.$color-text-main;
+    font-weight: 700;
+
+    .highlight {
+      color: v.$color-secondary;
+    }
+  }
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .input-group {
+    position: relative;
+    width: 100%;
+
+    input,
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      border: 2px solid v.$color-secondary;
+      border-radius: 10px;
+      padding: 16px 24px;
+      font-size: 16px;
+      color: v.$color-text-main;
+      box-sizing: border-box;
+      outline: none;
+      transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+
+      &::placeholder {
+        color: v.$color-text-muted;
+      }
+
+      &:focus {
+        border-color: v.$color-primary;
+        background-color: rgba(255, 255, 255, 0.02);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .error-msg {
+      position: absolute;
+      bottom: -22px;
+      left: 4px;
+      font-size: 13px;
+      color: #ff4a4a;
+    }
+
+    &.error {
+      input,
+      textarea {
+        border-color: #ff4a4a;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff4a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 16px) center;
+        padding-right: 48px;
+      }
+    }
+
+    &.success {
+      input,
+      textarea {
+        border-color: v.$color-primary;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234ef037' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 16px) center;
+        padding-right: 48px;
+      }
+    }
+  }
+
+  .privacy-group {
+    position: relative;
+
+    .error-msg {
+      position: absolute;
+      bottom: -22px;
+      left: 36px;
+      font-size: 13px;
+      color: #ff4a4a;
+    }
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+    font-size: 15px;
+    color: v.$color-text-main;
+    user-select: none;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      width: 20px;
+      height: 20px;
+      border: 2px solid v.$color-primary;
+      border-radius: 4px;
+      flex-shrink: 0;
+      position: relative;
+      transition: background-color 0.2s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: none;
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid #000000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    input:checked ~ .checkmark {
+      background-color: v.$color-primary;
+      &::after {
+        display: block;
+      }
+    }
+
+    .privacy-link {
+      color: v.$color-secondary;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .submit-btn {
+    align-self: center;
+    background-color: #a0a0a0; // Default gray
+    color: #ffffff;
+    border: none;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    height: 54px;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &.form-valid {
+      background-color: v.$color-primary; // Neon green when form is valid
+      color: #000000;
+      font-weight: 600;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(v.$color-primary, 0.4);
+      }
+    }
+  }
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.toast-notification {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  animation: slideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+  &.success {
+    background-color: #121212;
+    border: 2px solid v.$color-primary;
+    .toast-icon {
+      color: v.$color-primary;
+    }
+    .toast-message {
+      color: v.$color-text-main;
+    }
+  }
+
+  &.error {
+    background-color: #121212;
+    border: 2px solid #ff4a4a;
+    .toast-icon {
+      color: #ff4a4a;
+    }
+    .toast-message {
+      color: v.$color-text-main;
+    }
+  }
+
+  .toast-icon {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .toast-message {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

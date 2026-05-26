@@ -1,9 +1,73 @@
-import { Component } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.scss',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
 })
-export class ContactForm {}
+export class ContactForm {
+  private fb = inject(FormBuilder);
+
+  isLoading = signal<boolean>(false);
+  toastState = signal<{ show: boolean; type: 'success' | 'error'; message: string }>({
+    show: false,
+    type: 'success',
+    message: '',
+  });
+
+  contactForm = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', [Validators.required, Validators.minLength(10)]],
+    privacy: [false, [Validators.requiredTrue]],
+  });
+
+  isFieldInvalid(fieldName: string): boolean {
+    const control = this.contactForm.get(fieldName);
+    return !!(control && control.touched && control.invalid);
+  }
+
+  isFieldValidSuccess(fieldName: string): boolean {
+    const control = this.contactForm.get(fieldName);
+    return !!(control && control.touched && control.valid);
+  }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+
+    if (this.contactForm.invalid) {
+      this.contactForm.markAllAsTouched();
+      if (this.contactForm.get('privacy')?.invalid) {
+        this.showToast('error', 'Please accept the privacy policy.');
+      }
+      return;
+    }
+
+    this.isLoading.set(true);
+
+    // TODO: Send to backend
+    const payload = this.contactForm.value;
+
+    setTimeout(() => {
+      this.isLoading.set(false);
+      this.showToast('success', 'Your message has been sent successfully!');
+      this.contactForm.reset({
+        name: '',
+        email: '',
+        message: '',
+        privacy: false,
+      });
+    }, 2000);
+  }
+
+  private showToast(type: 'success' | 'error', message: string): void {
+    this.toastState.set({ show: true, type, message });
+    setTimeout(() => {
+      this.toastState.set({ show: false, type, message: '' });
+    }, 4000);
+  }
+}
