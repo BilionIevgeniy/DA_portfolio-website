@@ -5,14 +5,18 @@
 
   <div class="links-wrapper">
     <nav class="nav-links">
-      <a href="#about">About me</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#about">{{ 'header.nav.about' | translate }}</a>
+      <a href="#skills">{{ 'header.nav.skills' | translate }}</a>
+      <a href="#portfolio">{{ 'header.nav.portfolio' | translate }}</a>
     </nav>
 
     <div class="lang-switch">
-      <button class="lang-btn">DE</button>
-      <button class="lang-btn active">EN</button>
+      <button class="lang-btn" [class.active]="currentLang() === 'en'" (click)="switchLanguage('en')">{{
+        'header.lang.en' | translate
+        }}</button>
+      <button class="lang-btn" [class.active]="currentLang() === 'de'" (click)="switchLanguage('de')">{{
+        'header.lang.de' | translate
+        }}</button>
     </div>
   </div>
 </header>

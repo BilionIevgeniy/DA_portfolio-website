@@ -1,3 +1,8 @@
+@if (isLoading()) {
+<div class="preloader">
+  <div class="spinner"></div>
+</div>
+} @else {
 <app-header></app-header>
 <app-hero></app-hero>
 <app-about-me></app-about-me>
@@ -6,3 +11,4 @@
 <app-testimonials></app-testimonials>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>
+}
