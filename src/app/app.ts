@@ -29,17 +29,10 @@ import { LanguageService } from '@/app/services/language.service';
   styleUrl: './app.scss',
 })
 export class App implements OnInit {
-  protected readonly title = signal('portfolio-website');
-  private translate = inject(TranslateService);
   private languageService = inject(LanguageService);
-
   isTranslating = this.languageService.isTranslating;
 
   ngOnInit(): void {
-    const browserLang = this.translate.getBrowserLang();
-    const savedLang = localStorage.getItem('lang');
-    const finalLang =
-      savedLang || (browserLang && ['en', 'de'].includes(browserLang) ? browserLang : 'en');
-    this.languageService.setLanguage(finalLang);
+    this.languageService.setLanguage();
   }
 }

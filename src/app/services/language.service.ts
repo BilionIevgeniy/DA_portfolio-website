@@ -9,12 +9,16 @@ export class LanguageService {
   private translate = inject(TranslateService);
   currentLang = signal<string>(this.translate.currentLang || 'en');
 
-  setLanguage(lang: string): void {
+  setLanguage(lang?: string): void {
+    const browserLang = this.translate.getBrowserLang();
+    const savedLang = localStorage.getItem('lang');
+    const finalLang =
+      lang || savedLang || (browserLang && ['en', 'de'].includes(browserLang) ? browserLang : 'en');
     this.isTranslating.set(true);
-    this.translate.use(lang).subscribe({
+    this.translate.use(finalLang).subscribe({
       next: () => {
         this.isTranslating.set(false);
-        this.currentLang.set(lang);
+        this.currentLang.set(finalLang);
       },
       error: (err) => {
         console.error('❌ Load failed:', err);
