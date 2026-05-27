@@ -1,6 +1,7 @@
 import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ContactMailData, MailApiService } from '@/app/services/mail-api.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,6 +12,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 })
 export class ContactForm {
   private fb = inject(FormBuilder);
+  private mailApiService = inject(MailApiService);
 
   isLoading = signal<boolean>(false);
   toastState = signal<{ show: boolean; type: 'success' | 'error'; message: string }>({
@@ -49,19 +51,29 @@ export class ContactForm {
 
     this.isLoading.set(true);
 
-    // TODO: Send to backend
-    const payload = this.contactForm.value;
+    const mailData: ContactMailData = {
+      name: this.contactForm.value.name ?? '',
+      email: this.contactForm.value.email ?? '',
+      message: this.contactForm.value.message ?? '',
+    };
 
-    setTimeout(() => {
-      this.isLoading.set(false);
-      this.showToast('success', 'Your message has been sent successfully!');
-      this.contactForm.reset({
-        name: '',
-        email: '',
-        message: '',
-        privacy: false,
-      });
-    }, 2000);
+    this.mailApiService.sendContactMail(mailData).subscribe({
+      next: () => {
+        this.isLoading.set(false);
+        this.showToast('success', 'Your message has been sent successfully!');
+        this.contactForm.reset({
+          name: '',
+          email: '',
+          message: '',
+          privacy: false,
+        });
+      },
+      error: (err: unknown) => {
+        console.error('Email sending failed:', err);
+        this.isLoading.set(false);
+        this.showToast('error', 'Failed to send message. Please try again later.');
+      },
+    });
   }
 
   private showToast(type: 'success' | 'error', message: string): void {
