@@ -278,6 +278,9 @@
     border: 2px solid v.$color-primary;
     .toast-icon {
       color: v.$color-primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .toast-message {
       color: v.$color-text-main;

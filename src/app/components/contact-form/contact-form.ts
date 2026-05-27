@@ -80,6 +80,6 @@ export class ContactForm {
     this.toastState.set({ show: true, type, message });
     setTimeout(() => {
       this.toastState.set({ show: false, type, message: '' });
-    }, 4000);
+    }, 5000);
   }
 }
