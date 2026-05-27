@@ -1,3 +1,4 @@
+import { LanguageService } from '@/app/services/language.service';
 import { Component, inject, signal } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -8,14 +9,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './header.scss',
 })
 export class Header {
-  private translate = inject(TranslateService);
+  private languageService = inject(LanguageService);
 
-  currentLang = signal<string>(this.translate.currentLang || 'en');
+  currentLang = this.languageService.currentLang;
 
   switchLanguage(lang: string): void {
-    this.translate.use(lang).subscribe(() => {
-      this.currentLang.set(lang);
-      localStorage.setItem('lang', lang);
-    });
+    this.languageService.setLanguage(lang);
   }
 }

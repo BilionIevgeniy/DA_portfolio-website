@@ -9,6 +9,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials';
 import { ContactForm } from './components/contact-form/contact-form';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { LanguageService } from '@/app/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -30,22 +31,15 @@ import { Footer } from './components/footer/footer';
 export class App implements OnInit {
   protected readonly title = signal('portfolio-website');
   private translate = inject(TranslateService);
-  isLoading = signal(true);
+  private languageService = inject(LanguageService);
+
+  isTranslating = this.languageService.isTranslating;
 
   ngOnInit(): void {
     const browserLang = this.translate.getBrowserLang();
     const savedLang = localStorage.getItem('lang');
-
     const finalLang =
       savedLang || (browserLang && ['en', 'de'].includes(browserLang) ? browserLang : 'en');
-    this.translate.use(finalLang).subscribe({
-      next: () => {
-        this.isLoading.set(false);
-      },
-      error: (err) => {
-        console.error('❌ Load failed:', err);
-        this.isLoading.set(false);
-      },
-    });
+    this.languageService.setLanguage(finalLang);
   }
 }
