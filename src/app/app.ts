@@ -7,6 +7,7 @@ import { Portfolio } from './components/portfolio/portfolio';
 import { TestimonialsComponent } from './components/testimonials/testimonials';
 import { ContactForm } from './components/contact-form/contact-form';
 import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { Header } from './components/header/header';
     ContactForm,
     Header,
     TestimonialsComponent,
+    Footer,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
