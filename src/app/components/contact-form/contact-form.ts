@@ -2,10 +2,11 @@ import { Component, signal, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactMailData, MailApiService } from '@/app/services/mail-api.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule, TranslateModule],
+  imports: [ReactiveFormsModule, TranslateModule, RouterLink],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.scss',
   standalone: true,
