@@ -11,43 +11,42 @@
         <h3 class="contact-subtitle">Got a problem to solve?</h3>
 
         <p class="contact-description">
-          I am looking for a challenging front-end or full-stack role where I can apply my experience in building
-          scalable applications. Whether you need a dedicated developer to build features from scratch or optimize
-          existing codebases, I am ready to bring solid value and technical expertise to your engineering team.
+          {{"contact.description" | translate}}
         </p>
 
         <p class="contact-cta-text">
-          Need a Frontend developer? <span class="highlight">Contact me!</span>
+          {{"contact.cta" | translate}} <span class="highlight">{{"contact.ctaHighlight" | translate}}</span>
         </p>
       </div>
 
       <form class="contact-form" [formGroup]="contactForm" (submit)="onSubmit($event)">
 
         <div class="input-group" [class.error]="isFieldInvalid('name')" [class.success]="isFieldValidSuccess('name')">
-          <input type="text" formControlName="name" placeholder="Your name">
+          <input type="text" formControlName="name" placeholder="{{'contact.namePlaceholder' | translate}}">
 
           @if (isFieldInvalid('name')) {
-          <span class="error-msg">Your name is required (min 2 chars)</span>
+          <span class="error-msg">{{"contact.nameError" | translate}}</span>
           }
         </div>
 
         <div class="input-group" [class.error]="isFieldInvalid('email')" [class.success]="isFieldValidSuccess('email')">
-          <input type="text" formControlName="email" placeholder="Your email">
+          <input type="text" formControlName="email" placeholder="{{'contact.emailPlaceholder' | translate}}">
 
           @if (contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')) {
-          <span class="error-msg">Your email is required</span>
+          <span class="error-msg">{{"contact.emailRequired" | translate}}</span>
           }
           @if (contactForm.get('email')?.touched && contactForm.get('email')?.hasError('email')) {
-          <span class="error-msg">Please enter a valid email address</span>
+          <span class="error-msg">{{"contact.emailInvalid" | translate}}</span>
           }
         </div>
 
         <div class="input-group" [class.error]="isFieldInvalid('message')"
           [class.success]="isFieldValidSuccess('message')">
-          <textarea formControlName="message" placeholder="Your message" rows="6"></textarea>
+          <textarea formControlName="message" placeholder="{{'contact.messagePlaceholder' | translate}}"
+            rows="6"></textarea>
 
           @if (isFieldInvalid('message')) {
-          <span class="error-msg">Your message is empty (min 10 chars)</span>
+          <span class="error-msg">{{"contact.messageError" | translate}}</span>
           }
         </div>
 
@@ -56,12 +55,15 @@
             <input type="checkbox" formControlName="privacy">
             <span class="checkmark"></span>
             <span class="checkbox-text">
-              I've read the <a href="#" class="privacy-link">privacy policy</a> and agree to the processing of my data
-              as outlined.
+              <span>{{"contact.privacyPolicyPreText" |translate}}</span>
+              <a href="#" class="privacy-link">
+                {{"contact.privacyPolicyText" |translate}}
+              </a>
+              <span>{{"contact.privacyPolicyAdditionalText" | translate}}</span>
             </span>
           </label>
           @if (isFieldInvalid('privacy')) {
-          <span class="error-msg">Please accept the privacy policy.</span>
+          <span class="error-msg">{{"contact.privacyError" | translate}}</span>
           }
         </div>
 
@@ -69,7 +71,7 @@
           @if (isLoading()) {
           <div class="spinner"></div>
           } @else {
-          <span>Send message :)</span>
+          <span>{{"contact.submitButton" | translate}} :)</span>
           }
         </button>
 
@@ -81,7 +83,8 @@
   @if (toastState().show) {
   <div class="toast-notification" [class]="toastState().type">
     <div class="toast-icon">
-      @if (toastState().type === 'success') { ✓ <p>Success</p> } @else { ✕ <p>Error</p> }
+      @if (toastState().type === 'success') { ✓ <p>{{"contact.toastSuccess" | translate}}</p> } @else { ✕ <p>
+        {{"contact.toastError" | translate}}</p> }
     </div>
     <p class="toast-message">{{ toastState().message }}</p>
   </div>
