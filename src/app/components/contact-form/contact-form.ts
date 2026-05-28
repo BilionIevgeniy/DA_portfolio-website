@@ -2,13 +2,14 @@ import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactMailData, MailApiService } from '@/app/services/mail-api.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-form',
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.scss',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
 })
 export class ContactForm {
   private fb = inject(FormBuilder);
