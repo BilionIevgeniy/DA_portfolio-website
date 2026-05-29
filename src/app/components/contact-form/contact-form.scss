@@ -20,23 +20,24 @@
 .contact-header {
   width: 100%;
   margin-bottom: 80px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .left-line {
+    position: absolute;
+    right: 105%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200dvw;
+    height: 4px;
+    background-color: v.$color-secondary;
+  }
   .contact-title {
+    position: relative;
     font-size: 90px;
     line-height: 120px;
     font-weight: 700;
     color: v.$color-text-main;
-    display: inline-flex;
-    align-items: center;
-    gap: 40px;
-    margin: 0;
-
-    &::before {
-      content: '';
-      width: 320px;
-      height: 4px;
-      background-color: v.$color-secondary;
-    }
   }
 }
 
