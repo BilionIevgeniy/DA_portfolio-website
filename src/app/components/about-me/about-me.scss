@@ -3,7 +3,8 @@
 .about-section {
   position: relative;
   width: 100%;
-  padding: 124px 0;
+  padding: 0;
+  margin-bottom: 180px;
   display: flex;
   justify-content: center;
 }
@@ -16,7 +17,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 80px;
-  box-sizing: border-box;
 }
 
 .about-content {
@@ -114,7 +114,7 @@
 }
 
 .bg-blur-1 {
-  top: -10%;
+  top: -40%;
   right: -25%;
   width: 650px;
   height: 650px;

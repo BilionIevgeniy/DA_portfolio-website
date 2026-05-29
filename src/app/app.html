@@ -1,1 +1,9 @@
+@if (isTranslating()) {
+<div class="preloader">
+  <div class="spinner"></div>
+</div>
+} @else {
+<app-header></app-header>
 <router-outlet />
+<app-footer></app-footer>
+}

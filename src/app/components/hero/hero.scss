@@ -6,6 +6,7 @@
   height: 100vh;
   width: 100%;
   padding-top: 100px;
+  margin-bottom: 124px;
 }
 
 .hero-main-flex {
@@ -70,27 +71,6 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
-
-  .cta-button {
-    background-color: v.$color-primary;
-    color: v.$color-text-main;
-    font-family: Regular, serif;
-    border: none;
-    padding: 15px 30px;
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 120%;
-    border-radius: 10px;
-    cursor: pointer;
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(v.$color-primary, 0.5);
-    }
-  }
 }
 
 .hero-footer-bar {
@@ -100,31 +80,30 @@
   align-items: center;
   width: 100%;
   padding: 30px 0;
-  margin-top: 120px;
+  margin-top: 60px;
 
   .social-icons {
+    margin-left: 100px;
     display: flex;
     align-items: center;
     gap: 32px;
     position: relative;
-    img {
-      width: 28px;
-      height: 28px;
-      filter: brightness(0) invert(1);
-      transition: filter 0.3s ease;
-
+    a {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       &:hover {
-        filter: invert(74%) sepia(99%) saturate(460%) hue-rotate(94deg) brightness(101%)
-          contrast(101%);
+        transform: scale(1.1);
       }
     }
 
     .left-line {
       position: absolute;
-      left: -110px;
+      right: 105%;
       top: 50%;
       transform: translateY(-50%);
-      width: 100px;
+      width: 200dvw;
       height: 5px;
       border-radius: 5px;
       background-color: v.$color-secondary;
@@ -135,7 +114,7 @@
 .scroll-label-rotated {
   position: absolute;
   right: 60px;
-  bottom: 200px;
+  bottom: 50px;
   transform: rotate(90deg);
   transform-origin: center right;
   display: flex;
@@ -143,9 +122,12 @@
   gap: 16px;
   color: v.$color-text-main;
   font-size: 23px;
-  text-transform: uppercase;
   font-weight: 400;
   z-index: 100;
+  transition: color 0.3s ease;
+  &:hover {
+    color: v.$color-secondary;
+  }
 }
 
 .bg-blur-1 {

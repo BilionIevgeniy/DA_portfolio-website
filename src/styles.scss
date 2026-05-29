@@ -25,3 +25,24 @@ body {
   pointer-events: none;
   overflow: visible;
 }
+
+.button {
+  background-color: v.$color-primary;
+  color: v.$color-text-main;
+  font-family: Regular, serif;
+  border: none;
+  padding: 15px 30px;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 120%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(v.$color-primary, 0.5);
+  }
+}

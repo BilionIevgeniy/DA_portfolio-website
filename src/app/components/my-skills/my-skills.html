@@ -3,62 +3,105 @@
 
     <div class="skills-grid">
       <div class="skill-item">
-        <img src="icons/html.svg" alt="HTML">
-        <span>HTML</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/html.svg" alt="HTML">
+          <span>HTML</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/css.svg" alt="SCSS">
-        <span>SCSS</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/css.svg" alt="SCSS">
+          <span>SCSS</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/js.svg" alt="JavaScript">
-        <span>JavaScript</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/js.svg" alt="JavaScript">
+          <span>JavaScript</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/ts.svg" alt="TypeScript">
-        <span>TypeScript</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/ts.svg" alt="TypeScript">
+          <span>TypeScript</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/angular.svg" alt="Angular">
-        <span>Angular</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/angular.svg" alt="Angular">
+          <span>Angular</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/react.svg" alt="React">
-        <span>React</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/react.svg" alt="React">
+          <span>React</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/next.svg" alt="Next.js">
-        <span>Next.js</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/next.svg" alt="Next.js">
+          <span>Next.js</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/nest.svg" alt="NestJS">
-        <span>NestJS</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/nest.svg" alt="NestJS">
+          <span>NestJS</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/git.svg" alt="Git">
-        <span>Git</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/git.svg" alt="Git">
+          <span>Git</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/api.svg" alt="REST-API">
-        <span>REST-API</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/api.svg" alt="REST-API">
+          <span>REST-API</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/scrum.svg" alt="Scrum">
-        <span>Scrum</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/scrum.svg" alt="Scrum">
+          <span>Scrum</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/material.svg" alt="Material Design">
-        <span>Material Design</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/material.svg" alt="Material Design">
+          <span>Material Design</span>
+        </div>
       </div>
       <div class="skill-item">
-        <img src="icons/tailwind.svg" alt="Tailwind CSS">
-        <span>Tailwind CSS</span>
+        <div class="skill-item-wrapper">
+          <img src="icons/tailwind.svg" alt="Tailwind CSS">
+          <span>Tailwind CSS</span>
+        </div>
       </div>
       <div class="skill-item continuous-learning">
-        <img src="icons/learning.svg" alt="Continually learning">
-        <span>{{ "my_skills.continuousLearning" | translate }}</span>
+        <div class="learning-tooltip">
+          <p class="tooltip-title">{{ "my_skills.learningTitle" | translate }}</p>
+          <div class="tooltip-tech-wrapper">
+            <div class="tech-item">
+              <img src="icons/graphql.svg" alt="GraphQL" class="tech-icon">
+              <span>GraphQL</span>
+            </div>
+            <div class="tech-item">
+              <img src="icons/docker.svg" alt="Docker" class="tech-icon">
+              <span>Docker</span>
+            </div>
+          </div>
+          <div class="tooltip-arrow"></div>
+        </div>
+        <div class="skill-item-wrapper">
+          <img src="icons/learning.svg" alt="Continually learning">
+          <span class="learning-text">{{ "my_skills.continuousLearning" | translate }}</span>
+        </div>
       </div>
     </div>
+
     <div class="skills-text-content">
       <h2 class="skills-title">My skills</h2>
 
@@ -74,8 +117,9 @@
         {{ "my_skills.subDescription" | translate }}
       </p>
 
-      <button class="skills-button">{{ "my_skills.button" | translate }}</button>
+      <a href="#contact" class="button">{{ "my_skills.button" | translate }}</a>
     </div>
 
   </div>
+  <div class="bg-blur bg-blur-1"></div>
 </section>

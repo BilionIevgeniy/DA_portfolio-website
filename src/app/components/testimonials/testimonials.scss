@@ -2,11 +2,10 @@
 
 .testimonials-section {
   width: 100%;
-  background-color: v.$color-bg;
   padding: 120px 0;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  position: relative;
 }
 
 .testimonials-container {
@@ -16,7 +15,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
 }
 
 .testimonial-card-wrapper {
@@ -37,24 +35,22 @@
   border-radius: 30px;
   padding: 64px 48px 48px 48px;
   background-color: transparent;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   .quote-icon {
     position: absolute;
     top: -20px;
-    left: -20px;
+    left: -40px;
     font-size: 140px;
     font-family: serif;
     line-height: 1;
     color: v.$color-secondary;
-    background-color: v.$color-bg;
     padding: 0 10px;
   }
 
   .quote-text {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.6;
     color: v.$color-text-main;
     margin: 0 0 32px 0;
@@ -168,4 +164,16 @@
       }
     }
   }
+}
+
+.bg-blur-1 {
+  z-index: 2;
+  right: -300px;
+  top: -80px;
+  width: 500px;
+  height: 500px;
+  background-image: url('../../../../public/bg/green.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }

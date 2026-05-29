@@ -2,9 +2,10 @@
 
 .skills-section {
   width: 100%;
-  padding: 100px 0;
+  padding: 0;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .skills-wrapper {
@@ -15,7 +16,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 100px;
-  box-sizing: border-box;
 }
 
 .skills-grid {
@@ -25,12 +25,20 @@
   flex-grow: 1;
 
   .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-align: center;
+    .skill-item-wrapper {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      transition: transform 0.2s ease;
+
+      &:hover:not(.continuous-learning) img {
+        transform: translateY(-10px);
+      }
+    }
 
     img {
       width: 64px;
@@ -46,11 +54,98 @@
     }
 
     &.continuous-learning {
+      position: relative;
+      transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+      &:hover:not(.learning-tooltip) {
+        .learning-text {
+          color: v.$color-text-main !important;
+          transform: scale(1);
+        }
+
+        img:not(.tech-icon) {
+          filter: brightness(0) invert(1);
+        }
+
+        .learning-tooltip {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, -100px);
+        }
+      }
       span {
         color: v.$color-secondary;
       }
       img {
         filter: none;
+      }
+
+      .learning-tooltip {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 280px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+        z-index: 10;
+
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          visibility 0.25s ease;
+
+        .tooltip-title {
+          color: #000000;
+          font-size: 14px;
+          font-weight: 500;
+          margin: 0 0 12px 0;
+          text-align: center;
+          line-height: 1.3;
+        }
+
+        .tooltip-tech-wrapper {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          gap: 24px;
+        }
+
+        .tech-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+
+          span {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          .tech-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+          }
+        }
+
+        .tooltip-arrow {
+          position: absolute;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+          width: 12px;
+          height: 12px;
+          background-color: #ffffff;
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+        }
       }
     }
   }
@@ -64,8 +159,9 @@
   text-align: right;
 
   .skills-title {
-    font-size: 64px;
+    font-size: 90px;
     font-weight: 700;
+    line-height: 120px;
     color: v.$color-text-main;
     margin: 0 0 32px 0;
     position: relative;
@@ -106,23 +202,16 @@
     color: v.$color-text-muted;
     margin-bottom: 48px;
   }
+}
 
-  .skills-button {
-    background-color: v.$color-primary;
-    color: #000000;
-    border: none;
-    padding: 16px 36px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(v.$color-primary, 0.5);
-    }
-  }
+.bg-blur-1 {
+  z-index: -1;
+  bottom: -500px;
+  left: -500px;
+  width: 800px;
+  height: 800px;
+  background-image: url('../../../../public/bg/green-shadow-skills-portfolio.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
