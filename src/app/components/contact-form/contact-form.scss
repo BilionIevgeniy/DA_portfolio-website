@@ -4,9 +4,11 @@
   position: relative;
   width: 100%;
   background-color: v.$color-bg;
-  padding: 120px 0;
+  padding: 0;
+  padding-bottom: 120px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .contact-container {
@@ -253,12 +255,6 @@
   animation: spin 0.8s linear infinite;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .toast-notification {
   position: fixed;
   top: 40px;
@@ -306,6 +302,24 @@
     font-size: 16px;
     font-weight: 500;
     margin: 0;
+  }
+}
+
+.bg-blur-1 {
+  left: -200px;
+  bottom: -300px;
+  width: 650px;
+  height: 650px;
+  background-image: url('../../../../public/bg/purple-shadow.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
