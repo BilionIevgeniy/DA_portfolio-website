@@ -21,25 +21,25 @@ export class TestimonialsComponent {
 
   testimonials: Testimonial[] = [
     {
-      text: '{{ "testimonials.noam.text" | translate }}',
+      text: 'testimonials.noam.text',
       author: 'Noam Barnea',
       role: 'VP R&D at Leal Health',
       imgSrc: 'images/noam.jpeg',
     },
     {
-      text: '{{ "testimonials.best.text" | translate }}',
+      text: 'testimonials.best.text',
       author: 'Best Rotimi',
       role: 'Senior Full-Stack Engineer',
       imgSrc: 'images/best.jpeg',
     },
     {
-      text: '{{ "testimonials.hrach.text" | translate }}',
+      text: 'testimonials.hrach.text',
       author: 'Hrach Avagyan',
       role: 'Senior Frontend Engineer',
       imgSrc: 'images/hrach.jpeg',
     },
     {
-      text: '{{ "testimonials.pavel.text" | translate }}',
+      text: 'testimonials.pavel.text',
       author: 'Pavel Kalinichenko',
       role: 'Senior Full-Stack Engineer | DevOps',
       imgSrc: 'images/pavel.jpeg',
