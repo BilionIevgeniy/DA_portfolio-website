@@ -11,13 +11,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: v.$color-bg;
   color: v.$color-text-main;
   font-family: v.$font-main;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
