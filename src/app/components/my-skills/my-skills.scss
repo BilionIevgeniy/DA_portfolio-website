@@ -107,7 +107,7 @@
 
         .tooltip-title {
           color: #000000;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
           margin: 0 0 12px 0;
           text-align: center;
@@ -129,7 +129,7 @@
 
           span {
             color: #000000;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
           }
 
@@ -187,13 +187,13 @@
 
   &::after {
     content: '';
+    background-color: v.$color-secondary;
+    height: 4px;
+    left: 102%;
     position: absolute;
-    right: -40px;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 4px;
-    background-color: v.$color-secondary;
+    width: 100vw;
   }
 }
 
@@ -249,6 +249,8 @@
   }
 
   .skills-title {
+    margin-left: auto;
+    margin-right: 30px;
     font-size: 70px;
     line-height: 90px;
   }
@@ -264,7 +266,7 @@
 
 @include m.tablet {
   .skills-section {
-    padding-top: 80px;
+    padding-top: 140px;
   }
   .skills-wrapper {
     padding: 0 40px;
@@ -297,7 +299,7 @@
   }
 
   .skills-description {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .skills-cta-heading {
@@ -305,7 +307,7 @@
   }
 
   .skills-sub-description {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 32px;
   }
 }
@@ -360,14 +362,10 @@
     font-size: 48px;
     line-height: 60px;
     margin-bottom: 16px;
-
-    &::after {
-      display: none;
-    }
   }
 
   .skills-description {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .skills-cta-heading {
@@ -376,7 +374,7 @@
   }
 
   .skills-sub-description {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 28px;
   }
 

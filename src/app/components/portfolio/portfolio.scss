@@ -1,9 +1,10 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
 
 .portfolio-section {
   position: relative;
   width: 100%;
-  padding: 120px 0;
+  padding-top: 180px;
   display: flex;
   justify-content: center;
 }
@@ -181,4 +182,182 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .portfolio-section {
+    padding-top: 140px;
+  }
+
+  .portfolio-container {
+    padding: 0 60px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 72px;
+
+    .portfolio-title {
+      font-size: 70px;
+      line-height: 90px;
+    }
+  }
+
+  .projects-list {
+    gap: 100px;
+  }
+
+  .project-row {
+    gap: 48px;
+  }
+
+  .project-info {
+    .project-name {
+      font-size: 36px;
+    }
+
+    .project-tech {
+      font-size: 20px;
+    }
+
+    .project-description {
+      font-size: 16px;
+    }
+  }
+}
+
+@include m.tablet {
+  .portfolio-section {
+    padding-top: 100px;
+  }
+
+  .portfolio-container {
+    padding: 0 40px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 56px;
+
+    .portfolio-title {
+      font-size: 56px;
+      line-height: 72px;
+    }
+
+    .portfolio-subtitle {
+      font-size: 16px;
+    }
+  }
+
+  .projects-list {
+    gap: 72px;
+  }
+
+  .project-row {
+    gap: 32px;
+  }
+
+  .project-info {
+    .project-name {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .project-tech {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .project-description {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+  }
+
+  .project-actions {
+    a {
+      padding: 10px 22px;
+      font-size: 15px;
+    }
+  }
+
+  .bg-blur-1 {
+    transform: translateY(50%);
+    right: -400px;
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@include m.mobile {
+  .portfolio-container {
+    padding: 0 20px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 40px;
+
+    .portfolio-title {
+      font-size: 48px;
+      line-height: 60px;
+      gap: 20px;
+    }
+
+    .portfolio-subtitle {
+      font-size: 16px;
+    }
+  }
+
+  .projects-list {
+    gap: 56px;
+  }
+
+  .project-row {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+
+    &.project-row-reversed {
+      flex-direction: column;
+
+      .project-info {
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+
+  .project-visual {
+    width: 100%;
+
+    .laptop-wrapper {
+      max-width: 100%;
+    }
+  }
+
+  .project-info {
+    align-items: center;
+    text-align: center;
+
+    .project-name {
+      font-size: 28px;
+    }
+
+    .project-tech {
+      font-size: 15px;
+    }
+
+    .project-description {
+      font-size: 16px;
+      max-width: 100%;
+      margin-bottom: 28px;
+    }
+  }
+
+  .project-actions {
+    justify-content: center;
+
+    a {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
 }
