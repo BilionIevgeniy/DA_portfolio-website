@@ -1,8 +1,9 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
 
 .testimonials-section {
   width: 100%;
-  padding: 120px 0;
+  padding-top: 180px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -73,7 +74,6 @@
       font-size: 18px;
       color: v.$color-text-main;
       font-weight: 400;
-      white-space: nowrap;
     }
   }
 }
@@ -176,4 +176,146 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .testimonials-section {
+    padding-top: 140px;
+  }
+
+  .testimonials-container {
+    padding: 0 60px;
+  }
+
+  .quote-card {
+    padding: 56px 40px 40px;
+
+    .quote-text {
+      font-size: 18px;
+    }
+
+    .quote-footer {
+      .footer-line {
+        width: 200px;
+      }
+
+      .author-info {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .avatar-visual {
+    width: 260px;
+
+    .avatar-circle {
+      width: 220px;
+      height: 220px;
+    }
+  }
+
+  .slider-controls {
+    margin-right: 100px;
+  }
+}
+
+@include m.tablet {
+  .testimonials-section {
+    padding-top: 100px;
+  }
+
+  .testimonials-container {
+    padding: 0 40px;
+  }
+
+  .testimonial-card-wrapper {
+    gap: 40px;
+  }
+
+  .quote-card {
+    padding: 48px 32px 36px;
+    min-height: 280px;
+
+    .quote-text {
+      font-size: 17px;
+    }
+
+    .quote-footer {
+      .footer-line {
+        width: 120px;
+      }
+    }
+  }
+
+  .avatar-visual {
+    width: 220px;
+
+    .avatar-circle {
+      width: 190px;
+      height: 190px;
+    }
+  }
+
+  .slider-controls {
+    margin-right: 60px;
+  }
+}
+
+@include m.mobile {
+  .testimonials-section {
+    padding-top: 100px;
+  }
+
+  .testimonials-container {
+    padding: 0 20px;
+  }
+
+  .testimonial-card-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .avatar-visual {
+    order: -1;
+    width: auto;
+    justify-content: center;
+
+    .avatar-circle {
+      width: 180px;
+      height: 180px;
+    }
+
+    .avatar-decor-line {
+      display: none;
+    }
+  }
+
+  .quote-card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 48px 24px 32px;
+
+    .quote-icon {
+      left: -16px;
+    }
+
+    .quote-text {
+      font-size: 16px;
+    }
+
+    .quote-footer {
+      .footer-line {
+        width: 80px;
+      }
+
+      .author-info {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .slider-controls {
+    margin-right: 0;
+  }
 }
