@@ -1,11 +1,11 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
 
 .contact-section {
   position: relative;
   width: 100%;
   background-color: v.$color-bg;
-  padding: 0;
-  padding-bottom: 120px;
+  padding: 180px 0 120px;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -316,6 +316,147 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 10;
+}
+
+@media (max-width: 1200px) {
+  .contact-section {
+    padding: 140px 0 80px;
+  }
+
+  .contact-container {
+    padding: 0 60px;
+  }
+
+  .contact-header {
+    margin-bottom: 60px;
+
+    .contact-title {
+      font-size: 70px;
+      line-height: 90px;
+    }
+  }
+
+  .contact-content-wrapper {
+    gap: 60px;
+  }
+
+  .contact-text-side {
+    .contact-subtitle {
+      font-size: 26px;
+    }
+  }
+}
+
+@include m.tablet {
+  .contact-section {
+    padding: 100px 0 60px;
+  }
+
+  .contact-container {
+    padding: 0 40px;
+  }
+
+  .contact-header {
+    margin-bottom: 48px;
+
+    .contact-title {
+      font-size: 56px;
+      line-height: 72px;
+    }
+  }
+
+  .contact-content-wrapper {
+    gap: 40px;
+  }
+
+  .contact-text-side {
+    max-width: 360px;
+
+    .contact-subtitle {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .contact-description {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-cta-text {
+      font-size: 16px;
+    }
+  }
+
+  .contact-form {
+    gap: 24px;
+
+    .submit-btn {
+      font-size: 16px;
+    }
+  }
+}
+
+@include m.mobile {
+  .contact-section {
+    padding: 100px 0 48px;
+  }
+
+  .contact-container {
+    padding: 0 20px;
+  }
+
+  .contact-header {
+    margin-bottom: 40px;
+
+    .contact-title {
+      font-size: 48px;
+      line-height: 60px;
+    }
+  }
+
+  .contact-content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-text-side {
+    max-width: 100%;
+
+    .contact-subtitle {
+      font-size: 22px;
+    }
+
+    .contact-description {
+      font-size: 16px;
+    }
+
+    .contact-cta-text {
+      font-size: 16px;
+    }
+  }
+
+  .contact-form {
+    max-width: 100%;
+    gap: 24px;
+
+    .submit-btn {
+      align-self: stretch;
+      font-size: 16px;
+    }
+  }
+
+  .toast-notification {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .bg-blur-1 {
+    left: -200px;
+    bottom: -150px;
+    width: 350px;
+    height: 350px;
+  }
 }
 
 @keyframes spin {
