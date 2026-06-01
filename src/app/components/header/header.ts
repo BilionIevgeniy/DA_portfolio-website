@@ -11,10 +11,18 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
   private languageService = inject(LanguageService);
-
+  isMenuOpen = signal<boolean>(false);
   currentLang = this.languageService.currentLang;
 
   switchLanguage(lang: string): void {
     this.languageService.setLanguage(lang);
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen.set(!this.isMenuOpen());
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen.set(false);
   }
 }

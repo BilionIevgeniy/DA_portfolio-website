@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as v;
+
 .header {
   position: fixed;
   background-color: v.$color-bg;
@@ -12,28 +13,62 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 101;
+
   .wrapper {
-    width: 100dvw;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 32px 100px;
+
+    @media (max-width: 1024px) {
+      padding: 24px 40px;
+    }
+
+    @media (max-width: 810px) {
+      padding: 20px 24px;
+    }
   }
-  .links-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 90px;
-  }
+
   .logo {
     font-size: 32px;
     font-weight: 700;
     color: v.$color-text-main;
-    cursor: pointer;
+    text-decoration: none;
+    z-index: 101;
+
+    @media (max-width: 810px) {
+      font-size: 26px;
+    }
+
     .accent {
       color: v.$color-primary;
+    }
+  }
+
+  .links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (max-width: 810px) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100dvh;
+      background-color: #2b323d;
+      flex-direction: column;
+      justify-content: center;
+      gap: 48px;
+      z-index: 100;
+
+      &.menu-open {
+        right: 0;
+      }
     }
   }
 
@@ -41,10 +76,22 @@
     display: flex;
     gap: 29px;
 
+    @media (max-width: 810px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
     a {
       font-size: 23px;
       color: v.$color-text-main;
+      text-decoration: none;
       transition: color 0.3s ease;
+
+      @media (max-width: 810px) {
+        font-size: 26px;
+        color: #e2e8f0;
+      }
 
       &:hover {
         color: v.$color-primary;
@@ -55,19 +102,26 @@
   .lang-switch {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: v.$color-text-muted;
+    gap: 4px;
+
+    .lang-divider {
+      display: none;
+      @media (max-width: 810px) {
+        display: inline;
+        color: #64748b;
+        font-size: 22px;
+      }
+    }
 
     .lang-btn {
       background: none;
-      border: none;
+      border: 1px solid v.$color-primary;
       color: v.$color-text-muted;
       font-size: 16px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      border: 1px solid v.$color-primary;
       padding: 4px 8px;
       border-radius: 8px;
+      transition: all 0.3s ease;
 
       &:hover {
         color: v.$color-primary;
@@ -78,11 +132,56 @@
         color: #000000;
         font-weight: 600;
       }
+
+      @media (max-width: 810px) {
+        border: none;
+        font-size: 22px;
+        padding: 0;
+        color: #64748b;
+
+        &.active {
+          background: none;
+          color: v.$color-primary;
+        }
+      }
+    }
+  }
+
+  .burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 101;
+
+    @media (max-width: 810px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .separator {
-      opacity: 0.3;
-      margin: 0 4px;
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: v.$color-text-main;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    &.open {
+      span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+      }
     }
   }
 }

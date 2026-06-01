@@ -1,18 +1,25 @@
 <header class="header">
   <div class="wrapper">
-    <a [routerLink]="['/']" class="logo">
+    <a [routerLink]="['/']" class="logo" (click)="closeMenu()">
       Ievgen<span class="accent">B</span>
     </a>
 
-    <div class="links-wrapper">
+    <button class="burger-btn" [class.open]="isMenuOpen()" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="links-wrapper" [class.menu-open]="isMenuOpen()">
       <nav class="nav-links">
-        <a [routerLink]="['/']" fragment="about">{{ 'header.nav.about' | translate }}</a>
-        <a [routerLink]="['/']" fragment="skills">{{ 'header.nav.skills' | translate }}</a>
-        <a [routerLink]="['/']" fragment="portfolio">{{ 'header.nav.portfolio' | translate }}</a>
+        <a [routerLink]="['/']" fragment="about" (click)="closeMenu()">{{ 'header.nav.about' | translate }}</a>
+        <a [routerLink]="['/']" fragment="skills" (click)="closeMenu()">{{ 'header.nav.skills' | translate }}</a>
+        <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()">{{ 'header.nav.portfolio' | translate }}</a>
       </nav>
 
       <div class="lang-switch">
         <button class="lang-btn" [class.active]="currentLang() === 'en'" (click)="switchLanguage('en')">EN</button>
+        <span class="lang-divider">/</span>
         <button class="lang-btn" [class.active]="currentLang() === 'de'" (click)="switchLanguage('de')">DE</button>
       </div>
     </div>
