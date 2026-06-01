@@ -1,8 +1,9 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
 
 .skills-section {
   width: 100%;
-  padding: 0;
+  padding-top: 180px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -25,6 +26,9 @@
   flex-grow: 1;
 
   .skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .skill-item-wrapper {
       width: fit-content;
       display: flex;
@@ -151,57 +155,70 @@
   }
 }
 
-.skills-text-content {
+.skills-right {
   max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 40px;
+}
+
+.skills-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
+}
 
-  .skills-title {
-    font-size: 90px;
-    font-weight: 700;
-    line-height: 120px;
-    color: v.$color-text-main;
-    margin: 0 0 32px 0;
-    position: relative;
+.skills-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
 
-    &::after {
-      content: '';
-      position: absolute;
-      right: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 4px;
-      background-color: v.$color-secondary;
-    }
+.skills-title {
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 120px;
+  color: v.$color-text-main;
+  margin: 0 0 32px 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 4px;
+    background-color: v.$color-secondary;
   }
+}
 
-  .skills-description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: v.$color-text-main;
-    margin-bottom: 40px;
+.skills-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: v.$color-text-main;
+}
+
+.skills-cta-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: v.$color-text-main;
+  margin: 0 0 12px 0;
+
+  .accent {
+    color: v.$color-secondary;
   }
+}
 
-  .skills-cta-heading {
-    font-size: 36px;
-    font-weight: 700;
-    color: v.$color-text-main;
-    margin: 0 0 12px 0;
-
-    .accent {
-      color: v.$color-secondary;
-    }
-  }
-
-  .skills-sub-description {
-    font-size: 16px;
-    line-height: 1.5;
-    color: v.$color-text-muted;
-    margin-bottom: 48px;
-  }
+.skills-sub-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: v.$color-text-muted;
+  margin-bottom: 48px;
 }
 
 .bg-blur-1 {
@@ -214,4 +231,159 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .skills-wrapper {
+    padding: 0 60px;
+    gap: 60px;
+  }
+
+  .skills-grid {
+    gap: 36px;
+
+    .skill-item img {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  .skills-title {
+    font-size: 70px;
+    line-height: 90px;
+  }
+
+  .skills-description {
+    font-size: 16px;
+  }
+
+  .skills-cta-heading {
+    font-size: 28px;
+  }
+}
+
+@include m.tablet {
+  .skills-section {
+    padding-top: 80px;
+  }
+  .skills-wrapper {
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+
+    .skill-item img {
+      width: 44px;
+      height: 44px;
+    }
+
+    .skill-item span {
+      font-size: 13px;
+    }
+  }
+
+  .skills-right {
+    max-width: 380px;
+    gap: 28px;
+  }
+
+  .skills-title {
+    font-size: 56px;
+    line-height: 72px;
+    margin-bottom: 20px;
+  }
+
+  .skills-description {
+    font-size: 14px;
+  }
+
+  .skills-cta-heading {
+    font-size: 22px;
+  }
+
+  .skills-sub-description {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+}
+
+@include m.mobile {
+  .skills-section {
+    padding-top: 100px;
+  }
+  .skills-wrapper {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 0;
+  }
+
+  .skills-right {
+    display: contents;
+  }
+
+  .skills-intro {
+    order: 1;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .skills-grid {
+    order: 2;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    .skill-item img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .skill-item span {
+      font-size: 12px;
+    }
+  }
+
+  .skills-cta {
+    order: 3;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .skills-title {
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 16px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .skills-description {
+    font-size: 14px;
+  }
+
+  .skills-cta-heading {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .skills-sub-description {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .bg-blur-1 {
+    bottom: 200px;
+    left: -200px;
+    width: 300px;
+    height: 300px;
+  }
 }

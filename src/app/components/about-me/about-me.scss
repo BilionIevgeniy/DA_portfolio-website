@@ -139,10 +139,6 @@
 }
 
 @media (max-width: 1200px) {
-  .about-section {
-    margin-bottom: 120px;
-  }
-
   .about-wrapper {
     padding: 0 60px;
     gap: 48px;
@@ -165,10 +161,6 @@
 }
 
 @include m.tablet {
-  .about-section {
-    margin-bottom: 100px;
-  }
-
   .about-visual {
     display: none;
   }
@@ -202,10 +194,6 @@
 }
 
 @include m.mobile {
-  .about-section {
-    margin-bottom: 80px;
-  }
-
   .about-wrapper {
     padding: 0 20px;
     gap: 32px;
@@ -247,5 +235,12 @@
         height: 220px;
       }
     }
+  }
+
+  .bg-blur-1 {
+    top: 50px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
   }
 }
