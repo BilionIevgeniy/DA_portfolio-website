@@ -5,8 +5,8 @@
   position: relative;
   width: 100%;
   padding: 0;
-  margin-bottom: 180px;
   display: flex;
+  padding-top: 100px;
   justify-content: center;
 }
 
@@ -124,6 +124,18 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
+  @include m.tablet {
+    top: -20%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+  }
+  @include m.mobile {
+    top: -10%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+  }
 }
 
 @media (max-width: 1200px) {
