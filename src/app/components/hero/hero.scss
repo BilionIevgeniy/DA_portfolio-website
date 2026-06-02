@@ -261,12 +261,6 @@
   bottom: 12%;
   background-image: url('../../../../public/bg/hero-background.png');
   z-index: -2;
-
-  @media (max-width: 768px) {
-    right: 0;
-    top: -200px;
-    background-size: cover;
-  }
 }
 
 .bg-blur-2 {
