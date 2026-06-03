@@ -18,13 +18,30 @@
   align-items: center;
 }
 
+.testimonial-cards-stack {
+  display: grid;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
 .testimonial-card-wrapper {
+  grid-row: 1;
+  grid-column: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
   width: 100%;
-  margin-bottom: 48px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 
 .quote-card {

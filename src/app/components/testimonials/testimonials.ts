@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -45,8 +45,6 @@ export class TestimonialsComponent {
       imgSrc: 'images/pavel.jpeg',
     },
   ];
-
-  activeTestimonial = computed(() => this.testimonials[this.currentSlide()]);
 
   nextSlide(): void {
     const nextIndex = (this.currentSlide() + 1) % this.testimonials.length;
