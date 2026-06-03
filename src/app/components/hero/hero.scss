@@ -11,7 +11,6 @@
   @media (max-width: 768px) {
     padding-top: 90px;
     padding-bottom: 40px;
-    overflow: hidden;
   }
 }
 
@@ -36,7 +35,12 @@
   flex-shrink: 0;
   overflow: visible;
   position: relative;
-
+  .content {
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+  }
   @media (max-width: 768px) {
     width: 100%;
     max-width: 320px;
@@ -44,11 +48,16 @@
   }
 
   .hero-photo {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
     max-width: 450px;
     height: auto;
     object-fit: contain;
     display: block;
-    z-index: 2;
+    z-index: 0;
 
     @media (max-width: 1047px) {
       max-width: 340px;
@@ -66,11 +75,10 @@
   flex-direction: column;
   align-items: center;
   gap: 44px;
-
+  z-index: 1;
   @media (max-width: 768px) {
     width: 100%;
     gap: 32px;
-    padding: 0 16px;
   }
 
   .hero-title-group {
@@ -142,15 +150,21 @@
 }
 
 .hero-footer-bar {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   align-items: center;
-  width: 100%;
-  margin-top: 160px;
-
+  z-index: 2;
   @media (max-width: 768px) {
-    margin-top: 20px;
+    bottom: 40px;
     padding: 10px 0;
   }
 
@@ -210,7 +224,7 @@
 .scroll-label-rotated {
   position: absolute;
   right: 60px;
-  bottom: 50px;
+  bottom: -160px;
   transform: rotate(90deg);
   transform-origin: center right;
   display: flex;
@@ -232,12 +246,74 @@
 }
 
 .bg-blur-1 {
-  top: -1000px;
+  top: 20%;
   left: 0;
-  right: -200px;
-  bottom: 12%;
+  right: 0;
+  height: 100%;
   background-image: url('../../../../public/bg/hero-background.png');
-  z-index: -2;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  @media (min-width: 1700px) {
+    top: 5%;
+  }
+  @media (min-width: 2000px) {
+    top: 0%;
+  }
+  @media (min-width: 2100px) {
+    top: -2%;
+  }
+  @media (min-width: 2200px) {
+    top: -4%;
+  }
+  @media (min-width: 3000px) {
+    top: -24%;
+  }
+  @media (max-width: 1700px) {
+    top: 15%;
+  }
+  @media (max-width: 1600px) {
+    top: 20%;
+  }
+  @media (max-width: 1500px) {
+    top: 24%;
+  }
+  @media (max-width: 1400px) {
+    top: 25%;
+  }
+  @media (max-width: 1300px) {
+    top: 25%;
+  }
+  @media (max-width: 1200px) {
+    top: 27%;
+  }
+  @media (max-width: 1100px) {
+    top: 30%;
+  }
+  @media (max-width: 1047px) {
+    top: 20%;
+  }
+  @media (max-width: 914px) {
+    top: 7%;
+    left: -20%;
+    right: -40%;
+  }
+  @media (max-width: 900px) {
+    top: 2%;
+  }
+
+  @media (max-width: 500px) {
+    top: 10%;
+    left: 0%;
+    right: 0%;
+  }
+  @media (max-width: 400px) {
+    top: 15%;
+    left: 0%;
+    right: 0%;
+  }
 }
 
 .bg-blur-2 {
@@ -269,5 +345,17 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 100px;
+
+  @media (max-width: 1200px) {
+    padding: 0 60px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
 }
