@@ -6,8 +6,12 @@
   width: 100%;
   padding: 0;
   display: flex;
-  padding-top: 100px;
+  padding-top: 50px;
   justify-content: center;
+
+  @include m.mobile {
+    padding-top: 0;
+  }
 }
 
 .about-wrapper {
@@ -59,7 +63,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.2);
+      }
       img {
         width: 100%;
         height: auto;
