@@ -10,6 +10,7 @@
 }
 
 .testimonials-container {
+  position: relative;
   width: 100%;
   max-width: 1440px;
   padding: 0 100px;
@@ -35,7 +36,9 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
 
   &.active {
     opacity: 1;
@@ -184,7 +187,7 @@
 
 .bg-blur-1 {
   z-index: 2;
-  right: -300px;
+  right: -400px;
   top: -80px;
   width: 500px;
   height: 500px;

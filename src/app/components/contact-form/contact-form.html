@@ -38,7 +38,8 @@
           @if (contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')) {
           <span class="error-msg">{{"contact.emailRequired" | translate}}</span>
           }
-          @if (contactForm.get('email')?.touched && (contactForm.get('email')?.hasError('email') || contactForm.get('email')?.hasError('pattern'))) {
+          @if (contactForm.get('email')?.touched && (contactForm.get('email')?.hasError('email') ||
+          contactForm.get('email')?.hasError('pattern'))) {
           <span class="error-msg">{{"contact.emailInvalid" | translate}}</span>
           }
         </div>
@@ -81,6 +82,7 @@
       </form>
 
     </div>
+    <div class="bg-blur bg-blur-1"></div>
   </div>
 
   @if (toastState().show) {
@@ -93,5 +95,5 @@
   </div>
   }
 
-  <div class="bg-blur bg-blur-1"></div>
+
 </section>

@@ -10,6 +10,7 @@
 }
 
 .skills-wrapper {
+  position: relative;
   width: 100%;
   max-width: 1440px;
   padding: 0 100px;
@@ -222,7 +223,7 @@
 
 .bg-blur-1 {
   z-index: -1;
-  bottom: -500px;
+  bottom: -600px;
   left: -500px;
   width: 800px;
   height: 800px;

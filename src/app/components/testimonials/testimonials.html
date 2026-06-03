@@ -3,29 +3,29 @@
 
     <div class="testimonial-cards-stack">
       @for (testimonial of testimonials; track $index) {
-        <div class="testimonial-card-wrapper" [class.active]="$index === currentSlide()">
+      <div class="testimonial-card-wrapper" [class.active]="$index === currentSlide()">
 
-          <div class="quote-card">
-            <div class="quote-icon"><img src="icons/commas.svg" class="quote-icon" alt="" srcset=""></div>
+        <div class="quote-card">
+          <div class="quote-icon"><img src="icons/commas.svg" class="quote-icon" alt="" srcset=""></div>
 
-            <p class="quote-text">{{ testimonial.text | translate }}</p>
+          <p class="quote-text">{{ testimonial.text | translate }}</p>
 
-            <div class="quote-footer">
-              <div class="footer-line"></div>
-              <span class="author-info">
-                {{ testimonial.author }} - {{ testimonial.role | translate }}
-              </span>
-            </div>
+          <div class="quote-footer">
+            <div class="footer-line"></div>
+            <span class="author-info">
+              {{ testimonial.author }} - {{ testimonial.role | translate }}
+            </span>
           </div>
-
-          <div class="avatar-visual">
-            <div class="avatar-circle">
-              <img [src]="testimonial.imgSrc" [alt]="testimonial.author" class="avatar-img">
-            </div>
-            <div class="avatar-decor-line"></div>
-          </div>
-
         </div>
+
+        <div class="avatar-visual">
+          <div class="avatar-circle">
+            <img [src]="testimonial.imgSrc" [alt]="testimonial.author" class="avatar-img">
+          </div>
+          <div class="avatar-decor-line"></div>
+        </div>
+
+      </div>
       }
     </div>
 
@@ -46,6 +46,6 @@
       </button>
     </div>
 
+    <div class="bg-blur bg-blur-1"></div>
   </div>
-  <div class="bg-blur bg-blur-1"></div>
 </section>
