@@ -178,13 +178,12 @@
 }
 
 .skills-title {
-  font-size: 90px;
   font-weight: 700;
   line-height: 120px;
   color: v.$color-text-main;
   margin: 0 0 32px 0;
   position: relative;
-
+  white-space: nowrap;
   &::after {
     content: '';
     background-color: v.$color-secondary;
@@ -251,7 +250,6 @@
   .skills-title {
     margin-left: auto;
     margin-right: 30px;
-    font-size: 70px;
     line-height: 90px;
   }
 
@@ -264,7 +262,7 @@
   }
 }
 
-@include m.tablet {
+@media (max-width: 1065px) {
   .skills-section {
     padding-top: 140px;
   }
@@ -312,7 +310,7 @@
   }
 }
 
-@include m.mobile {
+@media (max-width: 815px) {
   .skills-section {
     padding-top: 100px;
   }
@@ -359,7 +357,6 @@
   }
 
   .skills-title {
-    font-size: 48px;
     line-height: 60px;
     margin-bottom: 16px;
   }
