@@ -115,24 +115,24 @@
 }
 
 .bg-blur-1 {
-  top: -40%;
-  right: -25%;
-  width: 650px;
-  height: 650px;
+  top: -150px;
+  right: -450px;
+  width: 600px;
+  height: 600px;
   background-image: url('../../../../public/bg/purple-shadow-about-me.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
   @include m.tablet {
-    top: -20%;
-    right: -10%;
+    top: -20px;
+    right: -250px;
     width: 400px;
     height: 400px;
   }
   @include m.mobile {
-    top: -10%;
-    right: -5%;
+    top: 0;
+    right: -200px;
     width: 300px;
     height: 300px;
   }
@@ -235,12 +235,5 @@
         height: 220px;
       }
     }
-  }
-
-  .bg-blur-1 {
-    top: 50px;
-    right: -150px;
-    width: 300px;
-    height: 300px;
   }
 }

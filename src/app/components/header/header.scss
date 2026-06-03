@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: v.$color-bg;
+  background-color: v.$color-bg-header;
   background-image: radial-gradient(
     circle at 10% 25%,
     rgba(v.$color-bg, 0.35) 0%,
@@ -116,21 +116,20 @@
     .lang-btn {
       background: none;
       border: 1px solid v.$color-primary;
-      color: v.$color-text-muted;
-      font-size: 16px;
+      color: v.$color-text-main;
+      font-size: 18px;
       cursor: pointer;
       padding: 4px 8px;
       border-radius: 8px;
       transition: all 0.3s ease;
 
       &:hover {
-        color: v.$color-primary;
+        background-color: v.$color-primary;
       }
 
       &.active {
         background-color: v.$color-primary;
-        color: #000000;
-        font-weight: 600;
+        font-weight: 800;
       }
 
       @media (max-width: 810px) {

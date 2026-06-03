@@ -11,13 +11,6 @@ body {
   background-size: cover;
 }
 
-.container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
 .bg-blur {
   position: absolute;
   background-size: cover;
@@ -29,7 +22,6 @@ body {
 .button {
   background-color: v.$color-primary;
   color: v.$color-text-main;
-  font-family: Regular, serif;
   border: none;
   padding: 15px 30px;
   font-size: 23px;
