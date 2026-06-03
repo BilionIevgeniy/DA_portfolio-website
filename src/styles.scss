@@ -1,6 +1,7 @@
 @use 'styles/fonts';
 @use 'styles/reset';
 @use 'styles/variables' as v;
+@import 'aos/dist/aos.css';
 
 body {
   background-color: v.$color-bg;

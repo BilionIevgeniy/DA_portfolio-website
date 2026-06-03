@@ -1,7 +1,7 @@
 <section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <div class="contact-header">
+    <div class="contact-header" data-aos="fade-up">
       <h2 class="contact-title">
         <span class="left-line"></span>{{"contact.title" | translate}}
       </h2>
@@ -9,7 +9,7 @@
 
     <div class="contact-content-wrapper">
 
-      <div class="contact-text-side">
+      <div class="contact-text-side" data-aos="fade-right">
         <h3 class="contact-subtitle">{{"contact.subtitle" | translate}}</h3>
 
         <p class="contact-description">
@@ -21,7 +21,7 @@
         </p>
       </div>
 
-      <form class="contact-form" [formGroup]="contactForm" (submit)="onSubmit($event)">
+      <form class="contact-form" [formGroup]="contactForm" (submit)="onSubmit($event)" data-aos="fade-left" data-aos-delay="100">
 
         <div class="input-group" [class.error]="isFieldInvalid('name')" [class.success]="isFieldValidSuccess('name')">
           <input type="text" formControlName="name" placeholder="{{'contact.namePlaceholder' | translate}}">
