@@ -21,7 +21,8 @@
         </p>
       </div>
 
-      <form class="contact-form" [formGroup]="contactForm" (submit)="onSubmit($event)" data-aos="fade-left" data-aos-delay="100">
+      <form class="contact-form" [formGroup]="contactForm" (submit)="onSubmit($event)" data-aos="fade-left"
+        data-aos-delay="100">
 
         <div class="input-group" [class.error]="isFieldInvalid('name')" [class.success]="isFieldValidSuccess('name')">
           <input type="text" formControlName="name" placeholder="{{'contact.namePlaceholder' | translate}}">
@@ -37,7 +38,7 @@
           @if (contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')) {
           <span class="error-msg">{{"contact.emailRequired" | translate}}</span>
           }
-          @if (contactForm.get('email')?.touched && contactForm.get('email')?.hasError('email')) {
+          @if (contactForm.get('email')?.touched && (contactForm.get('email')?.hasError('email') || contactForm.get('email')?.hasError('pattern'))) {
           <span class="error-msg">{{"contact.emailInvalid" | translate}}</span>
           }
         </div>
@@ -88,7 +89,7 @@
       @if (toastState().type === 'success') { ✓ <p>{{"contact.toastSuccess" | translate}}</p> } @else { ✕ <p>
         {{"contact.toastError" | translate}}</p> }
     </div>
-    <p class="toast-message">{{ toastState().message }}</p>
+    <p class="toast-message">{{ toastState().message | translate }}</p>
   </div>
   }
 

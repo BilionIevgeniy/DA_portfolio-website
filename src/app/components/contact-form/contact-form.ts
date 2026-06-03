@@ -24,7 +24,14 @@ export class ContactForm {
 
   contactForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email]],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.email,
+        Validators.pattern(/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/),
+      ],
+    ],
     message: ['', [Validators.required, Validators.minLength(10)]],
     privacy: [false, [Validators.requiredTrue]],
   });
@@ -45,7 +52,7 @@ export class ContactForm {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       if (this.contactForm.get('privacy')?.invalid) {
-        this.showToast('error', 'Please accept the privacy policy.');
+        this.showToast('error', 'contact.privacyError');
       }
       return;
     }
@@ -61,7 +68,7 @@ export class ContactForm {
     this.mailApiService.sendContactMail(mailData).subscribe({
       next: () => {
         this.isLoading.set(false);
-        this.showToast('success', 'Your message has been sent successfully!');
+        this.showToast('success', 'contact.toastSuccessText');
         this.contactForm.reset({
           name: '',
           email: '',
@@ -70,9 +77,9 @@ export class ContactForm {
         });
       },
       error: (err: unknown) => {
-        console.error('Email sending failed:', err);
+        console.error('contact.form.error', err);
         this.isLoading.set(false);
-        this.showToast('error', 'Failed to send message. Please try again later.');
+        this.showToast('error', 'contact.toastErrorText');
       },
     });
   }
