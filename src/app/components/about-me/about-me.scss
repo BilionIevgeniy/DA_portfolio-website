@@ -6,9 +6,12 @@
   width: 100%;
   padding: 0;
   display: flex;
-  padding-top: 50px;
+  padding-top: 30px;
   justify-content: center;
   z-index: 2;
+  @media (max-width: 1092px) {
+    padding-top: 0;
+  }
 }
 
 .about-wrapper {
