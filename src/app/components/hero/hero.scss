@@ -254,10 +254,10 @@
   background-position: center top;
   z-index: 1;
   @media (max-width: 942px) {
-    top: 15%;
+    top: 20%;
   }
   @include m.mobile {
-    bottom: -20%;
+    bottom: -11%;
   }
 }
 
