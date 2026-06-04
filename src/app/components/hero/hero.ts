@@ -23,14 +23,14 @@ export class Hero {
 
     let size: number;
     if (width <= 768) {
-      size = 24;
+      size = 22;
       return lang === 'de' ? Math.round(size * 0.6) : size;
     } else if (width <= 1260) {
       size = 38;
     } else if (width <= 1422) {
-      size = 48;
+      size = 46;
     } else {
-      size = 64;
+      size = 52;
     }
 
     return lang === 'de' ? Math.round(size * 0.7) : size;

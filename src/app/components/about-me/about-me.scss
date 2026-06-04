@@ -8,10 +8,7 @@
   display: flex;
   padding-top: 50px;
   justify-content: center;
-
-  @include m.mobile {
-    padding-top: 0;
-  }
+  z-index: 2;
 }
 
 .about-wrapper {

@@ -17,16 +17,16 @@
 .hero-main-flex {
   display: flex;
   align-items: center;
-  gap: 120px;
+  gap: 60px;
   padding-top: 60px;
 
   @media (max-width: 1200px) {
     gap: 40px;
   }
 
-  @media (max-width: 914px) {
+  @media (max-width: 942px) {
     flex-direction: column;
-    gap: 32px;
+    gap: 28px;
     padding-top: 20px;
   }
 }
@@ -36,10 +36,17 @@
   overflow: visible;
   position: relative;
   .content {
-    top: 0;
-    left: 0;
-    width: 320px;
-    height: 320px;
+    display: block;
+    width: 450px;
+    aspect-ratio: 451 / 554;
+
+    @media (max-width: 1092px) {
+      width: 340px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -48,18 +55,17 @@
   }
 
   .hero-photo {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    position: absolute;
     max-width: 450px;
     height: auto;
-    object-fit: contain;
     display: block;
     z-index: 0;
 
-    @media (max-width: 1047px) {
+    @media (max-width: 1092px) {
       max-width: 340px;
     }
 
@@ -75,7 +81,7 @@
   flex-direction: column;
   align-items: center;
   gap: 44px;
-  z-index: 1;
+  z-index: 2;
   @media (max-width: 768px) {
     width: 100%;
     gap: 32px;
@@ -110,33 +116,25 @@
 
   .hero-title {
     color: v.$color-text-main;
-    font-size: 90px;
+    font-size: 72px;
     font-weight: 700;
     line-height: 1;
-
-    @media (max-width: 1422px) {
-      font-size: 72px;
-    }
 
     @media (max-width: 1260px) {
       font-size: 56px;
     }
 
     @media (max-width: 768px) {
-      font-size: 36px;
+      font-size: 34px;
     }
   }
 
   .hero-subtitle {
-    font-size: 54px;
+    font-size: 42px;
     font-weight: 600;
     color: v.$color-secondary;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-
-    @media (max-width: 1422px) {
-      font-size: 42px;
-    }
 
     @media (max-width: 1260px) {
       font-size: 32px;
@@ -151,7 +149,7 @@
 
 .hero-footer-bar {
   position: absolute;
-  bottom: 60px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   max-width: 1440px;
@@ -162,11 +160,7 @@
   justify-content: flex-start;
   gap: 10px;
   align-items: center;
-  z-index: 2;
-  @media (max-width: 768px) {
-    bottom: 40px;
-    padding: 10px 0;
-  }
+  z-index: 3;
 
   .social-icons {
     margin-left: 100px;
@@ -175,7 +169,7 @@
     gap: 32px;
     position: relative;
 
-    @media (max-width: 1047px) {
+    @media (max-width: 1092px) {
       margin-left: 40px;
     }
 
@@ -246,73 +240,19 @@
 }
 
 .bg-blur-1 {
-  top: 20%;
+  top: 27%;
+  bottom: -27%;
   left: 0;
   right: 0;
-  height: 100%;
   background-image: url('../../../../public/bg/hero-background.png');
   background-size: cover;
   background-position: center top;
-  background-repeat: no-repeat;
-  z-index: 0;
-
-  @media (min-width: 1700px) {
-    top: 5%;
-  }
-  @media (min-width: 2000px) {
-    top: 0%;
-  }
-  @media (min-width: 2100px) {
-    top: -2%;
-  }
-  @media (min-width: 2200px) {
-    top: -4%;
-  }
-  @media (min-width: 3000px) {
-    top: -24%;
-  }
-  @media (max-width: 1700px) {
+  z-index: 1;
+  @media (max-width: 942px) {
     top: 15%;
   }
-  @media (max-width: 1600px) {
-    top: 20%;
-  }
-  @media (max-width: 1500px) {
-    top: 24%;
-  }
-  @media (max-width: 1400px) {
-    top: 25%;
-  }
-  @media (max-width: 1300px) {
-    top: 25%;
-  }
-  @media (max-width: 1200px) {
-    top: 27%;
-  }
-  @media (max-width: 1100px) {
-    top: 30%;
-  }
-  @media (max-width: 1047px) {
-    top: 20%;
-  }
-  @media (max-width: 914px) {
-    top: 7%;
-    left: -20%;
-    right: -40%;
-  }
-  @media (max-width: 900px) {
-    top: 2%;
-  }
-
-  @media (max-width: 500px) {
-    top: 10%;
-    left: 0%;
-    right: 0%;
-  }
-  @media (max-width: 400px) {
-    top: 15%;
-    left: 0%;
-    right: 0%;
+  @include m.mobile {
+    bottom: -20%;
   }
 }
 
@@ -327,7 +267,7 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  @media (max-width: 1047px) {
+  @media (max-width: 1092px) {
     width: 450px;
     height: 450px;
   }
@@ -346,16 +286,16 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 100px;
-
+  padding-bottom: 50px;
   @media (max-width: 1200px) {
-    padding: 0 60px;
+    padding: 0 60px 100px;
   }
 
   @media (max-width: 1024px) {
-    padding: 0 40px;
+    padding: 0 40px 100px;
   }
 
   @media (max-width: 768px) {
-    padding: 0 24px;
+    padding: 0 24px 100px;
   }
 }
