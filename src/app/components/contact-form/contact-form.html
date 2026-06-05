@@ -88,7 +88,7 @@
   @if (toastState().show) {
   <div class="toast-notification" [class]="toastState().type">
     <div class="toast-icon">
-      @if (toastState().type === 'success') { ✓ <p>{{"contact.toastSuccess" | translate}}</p> } @else { ✕ <p>
+      @if (toastState().type === 'success') { ✓ <p>{{"contact.toastSuccess" | translate}}</p> } @else {<p>
         {{"contact.toastError" | translate}}</p> }
     </div>
     <p class="toast-message">{{ toastState().message | translate }}</p>
