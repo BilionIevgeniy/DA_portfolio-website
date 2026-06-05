@@ -61,12 +61,17 @@
   justify-content: space-between;
   .quote-icon {
     position: absolute;
-    top: -20px;
-    left: -40px;
-    font-size: 140px;
+    top: -10px;
+    left: -20px;
     line-height: 1;
     color: v.$color-secondary;
     padding: 0 10px;
+
+    img {
+      width: 80px;
+      height: auto;
+      display: block;
+    }
   }
 
   .quote-text {
@@ -209,6 +214,14 @@
   .quote-card {
     padding: 56px 40px 40px;
 
+    .quote-icon {
+      left: -15px;
+
+      img {
+        width: 68px;
+      }
+    }
+
     .quote-text {
       font-size: 18px;
     }
@@ -254,6 +267,14 @@
   .quote-card {
     padding: 48px 32px 36px;
     min-height: 280px;
+
+    .quote-icon {
+      left: -12px;
+      top: -5px;
+      img {
+        width: 60px;
+      }
+    }
 
     .quote-text {
       font-size: 17px;
@@ -316,7 +337,12 @@
     padding: 48px 24px 32px;
 
     .quote-icon {
-      left: -16px;
+      left: -12px;
+      top: -6px;
+
+      img {
+        width: 54px;
+      }
     }
 
     .quote-text {
