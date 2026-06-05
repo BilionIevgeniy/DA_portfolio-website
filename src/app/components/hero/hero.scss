@@ -48,11 +48,6 @@
       width: 100%;
     }
   }
-  @media (max-width: 768px) {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
 
   .hero-photo {
     position: absolute;
@@ -72,6 +67,12 @@
     @media (max-width: 768px) {
       max-width: 100%;
     }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 
@@ -245,7 +246,7 @@
 }
 
 .bg-blur-1 {
-  top: 27%;
+  top: 10%;
   bottom: -27%;
   left: 0;
   right: 0;
@@ -253,6 +254,9 @@
   background-size: cover;
   background-position: center top;
   z-index: 1;
+  @media (max-width: 1420px) {
+    top: 22%;
+  }
   @media (max-width: 942px) {
     top: 20%;
   }
