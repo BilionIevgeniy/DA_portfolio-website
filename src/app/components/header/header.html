@@ -12,7 +12,7 @@
 
     <div class="links-wrapper" [class.menu-open]="isMenuOpen()">
       <nav class="nav-links">
-        <a [routerLink]="['/']" fragment="about" (click)="closeMenu()">{{ 'header.nav.about' | translate }}</a>
+        <a href="#about" (click)="scrollToAbout($event)">{{ 'header.nav.about' | translate }}</a>
         <a [routerLink]="['/']" fragment="skills" (click)="closeMenu()">{{ 'header.nav.skills' | translate }}</a>
         <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()">{{ 'header.nav.portfolio' | translate }}</a>
       </nav>
