@@ -8,9 +8,12 @@
   width: 100%;
   padding-top: 100px;
   padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media (max-width: 768px) {
     padding-top: 90px;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
   }
 }
 
@@ -18,7 +21,6 @@
   display: flex;
   align-items: center;
   gap: 60px;
-  padding-top: 60px;
 
   @media (max-width: 1200px) {
     gap: 40px;
@@ -246,7 +248,7 @@
 }
 
 .bg-blur-1 {
-  top: 10%;
+  top: -50px;
   bottom: -27%;
   left: 0;
   right: 0;
@@ -254,14 +256,16 @@
   background-size: cover;
   background-position: center top;
   z-index: 1;
-  @media (max-width: 1420px) {
-    top: 22%;
+  @media (min-width: 1920px) {
+    top: 10%;
   }
-  @media (max-width: 942px) {
-    top: 20%;
+
+  @media (min-width: 3440px) {
+    top: -5%;
   }
-  @include m.mobile {
-    bottom: -11%;
+
+  @media (max-width: 1440px) {
+    top: 24%;
   }
 }
 
